@@ -4,7 +4,7 @@ This repository hosts a comprehensive Linux system call table in Markdown format
 
 ## About This Repository
 
-- The main focus is the **generated Markdown file** (`Linux_Syscall_Table.md`) containing the detailed Linux syscall information.
+- The **generated Markdown file** [`Linux_Syscall_Table.md`](./Linux_Syscall_Table.md) contains the detailed Linux syscall information.
 - This file serves as a ready-to-use, GitHub-friendly documentation resource.
 - If you want to **generate or update this Markdown table on your own system**, a Python script (`linux_syscall_table.py`) is also provided.
   - The script extracts syscall data using system header files and man pages.
