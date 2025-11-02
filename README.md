@@ -1,4 +1,4 @@
-# Linux System Call Table (Generated)
+# Linux System Call Table ([`Linux_Syscall_Table.md`](./Linux_Syscall_Table.md))
 
 This repository hosts a comprehensive Linux system call table in Markdown format, generated dynamically for the x86_64 architecture. The table lists each syscall's number, name, brief description, and function prototype, providing a useful reference for developers, students, or system programmers.
 
