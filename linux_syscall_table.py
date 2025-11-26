@@ -1,8 +1,23 @@
 import subprocess
 import re
+import os
+import sys
 
-# Adjust path as needed for your architecture
-SYSCALL_HEADER = '/usr/include/x86_64-linux-gnu/asm/unistd_64.h'
+# Common paths for syscall headers
+POSSIBLE_HEADERS = [
+    '/usr/include/asm/unistd_64.h',                # Fedora/RHEL/Arch
+    '/usr/include/x86_64-linux-gnu/asm/unistd_64.h', # Debian/Ubuntu
+    '/usr/include/asm-generic/unistd.h'            # Generic fallback
+]
+
+def get_header_path():
+    for path in POSSIBLE_HEADERS:
+        if os.path.exists(path):
+            return path
+    print("Error: Could not find unistd_64.h in common locations.")
+    sys.exit(1)
+
+SYSCALL_HEADER = get_header_path()
 
 def extract_syscalls():
     syscalls = []
@@ -57,4 +72,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
